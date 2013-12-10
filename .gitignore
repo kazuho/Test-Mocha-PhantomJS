@@ -1,0 +1,8 @@
+Makefile
+inc/
+*.bak
+*.old
+Test-Mocha-PhantomJS-*.tar.gz
+META.yml
+MYMETA.*
+.DS_Store

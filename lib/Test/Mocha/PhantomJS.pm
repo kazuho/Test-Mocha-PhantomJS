@@ -129,6 +129,8 @@ A boolean value indicating if the test should be skipped in case L<mocha-phantom
 
 Kazuho Oku
 
+Copyright (c) 2013 DeNA Co., Ltd.
+
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.

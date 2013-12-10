@@ -6,16 +6,9 @@ use Plack::Runner;
 use Plack::App::Directory;
 use Test::Mocha::PhantomJS;
 
-BEGIN {
-    system "which mocha-phantomjs > /dev/null";
-    if ($? != 0) {
-        require "Test/More.pm";
-        Test::More::plan(skip_all => "could not find mocha-phantomjs");
-    }
-}
-
 test_mocha_phantomjs(
-    server => sub {
+    auto_skip => 1,
+    server    => sub {
         my $port = shift;
         my $runner = Plack::Runner->new;
         $runner->parse_options("--port", $port);

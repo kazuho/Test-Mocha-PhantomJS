@@ -16,6 +16,7 @@ sub test_mocha_phantomjs {
     Carp::croak("missing mandatory parameter 'server'")
         unless exists $args{server};
     %args = (
+        auto_skip => undef,
         max_wait  => 10,
         build_uri => sub {
             my $port = shift;
@@ -23,6 +24,14 @@ sub test_mocha_phantomjs {
         },
         %args,
     );
+
+    if ($args{auto_skip}) {
+        system "which mocha-phantomjs > /dev/null";
+        if ($? != 0) {
+            require "Test/More.pm";
+            Test::More::plan(skip_all => "could not find mocha-phantomjs");
+        }
+    }
 
     my $client_pid = $$;
 

@@ -2,6 +2,7 @@ use inc::Module::Install;
 
 name 'Test-Mocha-PhantomJS';
 all_from 'lib/Test/Mocha/PhantomJS.pm';
+readme_from 'lib/Test/Mocha/PhantomJS.pm';
 license 'perl';
 
 requires 'Scope::Guard';
